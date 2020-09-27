@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-md-3">
+        <h3>Thông tin chi tiết</h3>
+        <img src="" alt="">
+        <div>
+            S : {{model.salary |currency:'VN':true}}
+        </div>
+    </div>
+    <div class="col-md-9">
+        <h3>Chỉnh sửa thông tin</h3>
+        <mat-form-field appearance="outline">
+            <mat-label>S</mat-label>
+            <input matInput placeholder="Placeholder" [(ngModel)]="model.salary"> 
+        </mat-form-field><br>
+        <button mat-raised-button (click)="Submit()" color="primary">Xác nhận</button>
+    </div>
+</div>

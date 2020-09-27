@@ -1,0 +1,33 @@
+<div>
+    <div>
+        Lương : {{salary}}
+    </div>
+    <div>
+        <h2>Danh sách danh mục</h2>
+        <mat-form-field appearance="fill" class="mr-3">
+            <mat-label>đơn vị</mat-label>
+            <mat-select  [(ngModel)]="unit" (selectionChange)="selectChangeHandler()">
+              <mat-option value="%">%</mat-option>
+              <mat-option value="Currency">Tiền tệ</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <ul>
+            <li *ngFor="let item of listCategory">
+                <span>{{item.name}} </span> 
+                <mat-form-field appearance="outline" class="mr-3 ml-2">
+                    <mat-label>Khối lượng</mat-label>
+                    <input (blur)="blurInput($event,item)" [(ngModel)]="item.amountConsideration" value="" type="number" matInput placeholder="Placeholder">
+                </mat-form-field>
+                
+                <span>Tương ứng: <span>{{item.amountPerTotal}}</span></span> 
+            </li>
+        </ul>
+        <div>
+            <button class="mr-3" mat-raised-button (click)="submit()">Xác nhận</button>
+        </div>
+        <div>
+            <a href="/category">Thêm danh mục</a>
+        </div>
+    </div>
+   
+</div>

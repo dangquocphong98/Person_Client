@@ -1,0 +1,15 @@
+<div class="d-flex justify-content-between">
+    <mat-form-field appearance="outline" class="full-width padding-r-20">
+        <mat-label>Mã danh mục</mat-label>
+        <input (blur)="validateInput()" [disabled]='isCancel' [(ngModel)]="model.codeCategory" autocomplete="off" matInput placeholder="Placeholder">
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width padding-r-20">
+        <mat-label>Tên danh mục</mat-label>
+        <input (blur)="validateInput()" [(ngModel)]="model.name" autocomplete="off" matInput placeholder="Placeholder">
+    </mat-form-field>
+   
+</div>
+<button [disabled]="isDisable" (click)="Submit()" class="mr-3" mat-raised-button [color]="textColor">{{textButton}}</button>
+<button  *ngIf="isCancel" (click)="refreshModel()" mat-raised-button color="accent">Hủy</button>
+
+

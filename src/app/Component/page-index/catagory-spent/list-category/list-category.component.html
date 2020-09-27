@@ -1,0 +1,38 @@
+<div class="mat-elevation-z8">
+  <table style="width:100%;margin-top: 2rem;" mat-table [dataSource]="dataSource">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="code">
+      <th mat-header-cell *matHeaderCellDef> Mã danh mục </th>
+      <td mat-cell *matCellDef="let element"> {{element.codeCategory}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Tên danh mục </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef> Tác vụ </th>
+      <td mat-cell *matCellDef="let element"><mat-icon class="icon" (click)="Update(element)" matTooltip="Cập nhật">create</mat-icon>
+         <mat-icon class="icon" (click)="ConfirmDelete(element)" matTooltip="Xóa">delete</mat-icon> </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <p class="text-center" *ngIf="IsNoData">Không có dữ liệu</p>
+  <mat-paginator [length]="totalRecord"
+              [pageSize]="pageSize"
+              [pageSizeOptions]="pageSizeOption"
+              (page)="pageChange($event)"
+              showFirstLastButtons>
+</mat-paginator>
+</div>
+

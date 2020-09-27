@@ -1,0 +1,18 @@
+
+<div class="box-login">
+    <h1>Đăng nhập</h1>
+    <div>
+        <mat-form-field appearance="outline">
+            <mat-label>Tên đăng nhập</mat-label>
+            <input [(ngModel)]="username" matInput autocomplete="off">
+        </mat-form-field>
+    </div>
+   
+    <div>
+        <mat-form-field appearance="outline">
+            <mat-label>Mật khẩu</mat-label>
+            <input [(ngModel)]="pass" matInput autocomplete="off">
+        </mat-form-field>
+    </div>
+    <button (click)="submit()" mat-raised-button color="primary">Đăng nhập</button>
+</div>

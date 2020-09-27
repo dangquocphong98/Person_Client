@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Xóa danh mục</h1>
+<div mat-dialog-content>
+  <p>Bạn có chắc muốn xóa danh mục : {{data.name}}</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="accent" (click)="submitDelete()">Có</button>
+  <button mat-button (click)="onNoClick()">Hủy</button>
+</div>

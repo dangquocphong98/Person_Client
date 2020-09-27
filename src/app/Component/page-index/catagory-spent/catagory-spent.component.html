@@ -1,0 +1,15 @@
+<div class="wrap">
+    <h2>Danh mục chi tiêu</h2>
+    <div>
+        <div>
+            <app-add-category [modelBinding]='modelBind'></app-add-category>
+        </div>
+        <div style="width:100%;">
+            <app-list-category  (UpdateClick)="BindModel($event)"></app-list-category>
+        </div>
+    </div>
+</div>
+
+
+
+
